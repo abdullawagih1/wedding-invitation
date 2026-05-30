@@ -57,32 +57,32 @@ export const WEDDING_DATA = {
   galleryImages: [
     {
       id: 1,
-      src: '02.jpeg',
+      src: '/02.jpeg',
       alt: 'معاً للأبد',
     },
     {
       id: 2,
-      src: '01.jpeg',
+      src: '/01.jpeg',
       alt: 'قراءة الفاتحة',
     },
     {
       id: 3,
-      src: '05.jpeg',
+      src: '/05.jpeg',
       alt: 'لحظة سعيدة',
     },
     {
       id: 4,
-      src: '04.jpeg',
+      src: '/04.jpeg',
       alt: 'ذكرى جميلة',
     },
     {
       id: 5,
-      src: '06.jpeg',
+      src: '/06.jpeg',
       alt: 'لحظة رومانسية',
     },
     {
       id: 6,
-      src: '03.jpeg',
+      src: '/03.jpeg',
       alt: 'اللحظة المثالية',
     },
   ],

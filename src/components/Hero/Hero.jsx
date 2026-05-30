@@ -68,7 +68,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-hero-gradient px-5 py-20"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-visible bg-hero-gradient px-5 py-20"
     >
       {/* Background decorative stars */}
       <DecorativeStars className="opacity-60" />
