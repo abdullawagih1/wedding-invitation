@@ -1,0 +1,348 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   GLOBAL BASE STYLES
+   ========================================== */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #fdf8f0;
+    color: #3d2b2b;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(183, 110, 121, 0.25);
+    color: #5a2d35;
+  }
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+   ========================================== */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #f9f3e8;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4a0a8;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b76e79;
+}
+
+/* ==========================================
+   TYPOGRAPHY UTILITIES
+   ========================================== */
+@layer utilities {
+  .font-arabic {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .font-arabic-serif {
+    font-family: 'Amiri', serif;
+  }
+
+  .text-rose-gold {
+    color: #b76e79;
+  }
+
+  .text-warm-gold {
+    color: #c9a96e;
+  }
+
+  .text-deep-rose {
+    color: #8b4a52;
+  }
+}
+
+/* ==========================================
+   LUXURY GRADIENT BACKGROUNDS
+   ========================================== */
+.bg-luxury-gradient {
+  background: linear-gradient(135deg, #fdf8f0 0%, #f9f3e8 30%, #f5e6e8 60%, #fdf0f2 100%);
+}
+
+.bg-hero-gradient {
+  background: 
+    radial-gradient(ellipse at top, rgba(212, 160, 168, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom-right, rgba(201, 169, 110, 0.15) 0%, transparent 60%),
+    linear-gradient(160deg, #fdf8f0 0%, #f9f3e8 40%, #fdf0f2 100%);
+}
+
+.bg-envelope-gradient {
+  background: linear-gradient(145deg, #f5e6e8 0%, #ecddd5 35%, #f0e4d8 65%, #f5e6e8 100%);
+}
+
+.bg-story-gradient {
+  background: linear-gradient(180deg, #fdf8f0 0%, #f8f0f5 50%, #fdf8f0 100%);
+}
+
+/* ==========================================
+   GLASSMORPHISM
+   ========================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.glass-rose {
+  background: rgba(245, 230, 232, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(183, 110, 121, 0.2);
+}
+
+.glass-gold {
+  background: rgba(247, 231, 206, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+}
+
+/* ==========================================
+   DECORATIVE ELEMENTS
+   ========================================== */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(183, 110, 121, 0.4), transparent);
+}
+
+/* Rose gold shimmer text */
+.text-shimmer {
+  background: linear-gradient(
+    120deg,
+    #8b4a52 0%,
+    #b76e79 25%,
+    #c9a96e 50%,
+    #b76e79 75%,
+    #8b4a52 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-text 4s linear infinite;
+}
+
+@keyframes shimmer-text {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* ==========================================
+   ENVELOPE ANIMATIONS
+   ========================================== */
+.envelope-flap {
+  transform-origin: top center;
+  transform-style: preserve-3d;
+}
+
+.envelope-shadow {
+  box-shadow:
+    0 4px 15px rgba(183, 110, 121, 0.15),
+    0 20px 60px rgba(139, 74, 82, 0.12),
+    0 50px 100px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   COUNTDOWN DIGIT FLIP
+   ========================================== */
+.digit-card {
+  position: relative;
+  perspective: 400px;
+}
+
+/* ==========================================
+   GALLERY / SWIPER OVERRIDES
+   ========================================== */
+.swiper-pagination-bullet {
+  background: rgba(183, 110, 121, 0.4) !important;
+  opacity: 1 !important;
+  width: 6px !important;
+  height: 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #b76e79 !important;
+  width: 20px !important;
+  border-radius: 3px !important;
+  transition: width 0.3s ease !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #b76e79 !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================
+   PARTICLE / PETAL EFFECTS
+   ========================================== */
+.petal {
+  position: absolute;
+  border-radius: 50% 0 50% 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: fall-petal linear infinite;
+}
+
+@keyframes fall-petal {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotate(0deg);
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg) translateX(50px);
+  }
+}
+
+/* ==========================================
+   BUTTON STYLES
+   ========================================== */
+.btn-luxury {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #b76e79 0%, #8b4a52 100%);
+  color: white;
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(183, 110, 121, 0.35);
+}
+
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-luxury:hover::before {
+  opacity: 1;
+}
+
+.btn-luxury:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(183, 110, 121, 0.45);
+}
+
+.btn-luxury:active {
+  transform: translateY(0);
+}
+
+.btn-outline-luxury {
+  position: relative;
+  background: transparent;
+  color: #b76e79;
+  border: 1.5px solid rgba(183, 110, 121, 0.6);
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-luxury:hover {
+  background: rgba(183, 110, 121, 0.08);
+  border-color: #b76e79;
+  transform: translateY(-1px);
+}
+
+/* ==========================================
+   SECTION COMMON STYLES
+   ========================================== */
+.section-container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================
+   RING / ICON GLOW EFFECT
+   ========================================== */
+.ring-glow {
+  filter: drop-shadow(0 0 8px rgba(201, 169, 110, 0.6)) drop-shadow(0 0 20px rgba(183, 110, 121, 0.3));
+}
+
+/* ==========================================
+   SCROLL LOCK (for envelope)
+   ========================================== */
+body.scroll-locked {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ==========================================
+   RESPONSIVE — DESKTOP ENHANCEMENT
+   ========================================== */
+@media (min-width: 768px) {
+  .section-container {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    max-width: 800px;
+  }
+}
