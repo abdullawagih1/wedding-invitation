@@ -112,7 +112,7 @@ export default function Hero() {
           <h1 className="font-arabic-serif leading-tight">
             <span className="block text-shimmer font-bold"
               style={{ fontSize: 'clamp(2.5rem, 10vw, 4.5rem)' }}>
-              {bride}
+              {groom}
             </span>
             <span className="block text-warm-gold/50 font-light my-1"
               style={{ fontSize: 'clamp(1.2rem, 5vw, 2rem)', letterSpacing: '0.3em' }}>
@@ -120,7 +120,7 @@ export default function Hero() {
             </span>
             <span className="block text-shimmer font-bold"
               style={{ fontSize: 'clamp(2.5rem, 10vw, 4.5rem)' }}>
-              {groom}
+              {bride}
             </span>
           </h1>
         </motion.div>

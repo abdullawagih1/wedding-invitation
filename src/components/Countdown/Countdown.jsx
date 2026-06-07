@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { WEDDING_DATA } from '../../data/weddingData';
 import { OrnamentDivider } from '../Shared/Decorative';
-import { pad } from '../../utils/helpers';
+import { pad, toArabicNumerals } from '../../utils/helpers';
 
 /* ─── Arabic labels ─────────────────────────────────────────── */
 const LABELS = ['الأيام', 'الساعات', 'الدقائق', 'الثواني'];
@@ -14,7 +14,7 @@ const LABELS = ['الأيام', 'الساعات', 'الدقائق', 'الثوا�
 function DigitCard({ value, label, delay }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-  const display = pad(value);
+  const display = toArabicNumerals(pad(value));
 
   return (
     <motion.div
